@@ -57,7 +57,7 @@ SRC_FILES = $(call rwildcard,$(SRC),*.cpp)
 # build output
 .PHONY : deps all shaders out clean clean.all bgfx
 # Output
-main : deps out
+main : deps shaders out
 	$(CXX) $(SRC_FILES) $(3RD_FILES) -o  $(OUT)/main.html $(CXXFLAGS) $(LD_FLAGS) $(BGFX_HEADERS)
 
 all : main shaders assets
