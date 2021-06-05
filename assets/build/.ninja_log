@@ -1,0 +1,25 @@
+# ninja log v5
+3	114	0	meshes/platform.bin	f445290237878a04
+114	214	0	meshes/tree1b_lod1_2.bin	6dcf180b35abe16
+5	254	0	textures/texture_compression_etc1.ktx	4f88489732329ecf
+3	287	0	meshes/tree1b_lod0_2.bin	f6b4d608be4dc486
+254	314	0	meshes/tree1b_lod2_2.bin	877b5f7b7753b411
+214	332	0	meshes/tree1b_lod2_1.bin	6f61b368587fa0d1
+4	372	0	meshes/tree1b_lod1_1.bin	f13858dcdb11635f
+3	403	0	meshes/tree1b_lod0_1.bin	c53d35f1b317000b
+314	410	0	textures/texture_compression_bc1.ktx	340f5a3e824af0d5
+332	417	0	textures/texture_compression_bc2.ktx	26436d4aab32b1aa
+410	436	0	textures/texture_compression_etc2.ktx	96c122ebe9c8b02d
+372	462	0	textures/texture_compression_bc3.ktx	34f82f2106de377b
+2	471	0	meshes/hollowcube.bin	ad4eb4e21cb897be
+436	472	0	textures/parallax-n.ktx	6f1d02fcd25e3571
+462	489	0	textures/parallax-h.ktx	5486ecd78ee446f4
+471	539	0	textures/lightmap.ktx	3264f743d67d8eb1
+2	609	0	meshes/column.bin	705866ea94165cc8
+417	689	0	textures/parallax-d.ktx	392bfda7d9823362
+287	1197	0	meshes/test_scene.bin	ee5454a55c13ac38
+1	1335	0	meshes/bunny_decimated.bin	a87f277a6d2d3eb0
+473	1563	0	textures/uffizi.ktx	506921f80f10f817
+1	5357	0	meshes/bunny_patched.bin	be826d61efa34b91
+1	15137	0	meshes/bunny.bin	e255cfb3d3cf88a1
+403	15844	0	textures/texture_compression_bc7.ktx	924bed71a47b953b
