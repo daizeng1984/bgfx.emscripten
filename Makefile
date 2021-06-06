@@ -15,6 +15,7 @@ OS=windows
 endif
 
 TARGET=Debug
+TARGET_FLAGS= -g -s SAFE_HEAP=1 -s ASSERTIONS=1 -s STACK_OVERFLOW_CHECK=1 -s DEMANGLE_SUPPORT=1 
 
 BGFX_DIR = deps/bgfx
 BX_DIR = deps/bx
@@ -26,14 +27,14 @@ NINJA?=$(PWD)/$(BX_DIR)/tools/bin/$(OS)/ninja
 
 BGFX_BIN = $(BGFX_DIR)/.build/wasm/bin/
 BGFX_LIB = $(BGFX_BIN)/bgfx$(TARGET).bc $(BGFX_BIN)/bimg$(TARGET).bc $(BGFX_BIN)/bx$(TARGET).bc $(BGFX_BIN)/bimg_decode$(TARGET).bc
-LD_FLAGS = $(BGFX_LIB) -s USE_WEBGL2=1 -s USE_GLFW=3 -s WASM=1  -std=c++1z -s ALLOW_MEMORY_GROWTH=1 --preload-file assets@/ -s DEMANGLE_SUPPORT=1 --shell-file src/shell.html
+LD_FLAGS = $(BGFX_LIB) -s USE_WEBGL2=1 -s USE_GLFW=3 -s WASM=1  -std=c++1z -s ALLOW_MEMORY_GROWTH=1 --preload-file assets@/ --shell-file src/shell.html
 
 
 # CC specifies which compiler we're using
 CC = emcc
 CXX = em++
 MAKE = make
-CXXFLAGS = -g -w -D ENTRY_CONFIG_IMPLEMENT_MAIN=1
+CXXFLAGS = -w -D ENTRY_CONFIG_IMPLEMENT_MAIN=1
 
 OUT = ./build
 ASSETS_OUT = $(OUT)/assets
@@ -58,7 +59,7 @@ SRC_FILES = $(call rwildcard,$(SRC),*.cpp)
 .PHONY : deps all shaders out clean clean.all bgfx
 # Output
 main : deps shaders out
-	$(CXX) $(SRC_FILES) $(3RD_FILES) -o  $(OUT)/main.html $(CXXFLAGS) $(LD_FLAGS) $(BGFX_HEADERS)
+	$(CXX) $(SRC_FILES) $(3RD_FILES) -o  $(OUT)/main.html $(CXXFLAGS) $(LD_FLAGS) $(TARGET_FLAGS) $(BGFX_HEADERS)
 
 all : main shaders assets
 
