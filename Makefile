@@ -26,7 +26,7 @@ NINJA?=$(PWD)/$(BX_DIR)/tools/bin/$(OS)/ninja
 
 BGFX_BIN = $(BGFX_DIR)/.build/wasm/bin/
 BGFX_LIB = $(BGFX_BIN)/bgfx$(TARGET).bc $(BGFX_BIN)/bimg$(TARGET).bc $(BGFX_BIN)/bx$(TARGET).bc $(BGFX_BIN)/bimg_decode$(TARGET).bc
-LD_FLAGS = $(BGFX_LIB) -s USE_WEBGL2=1 -s USE_GLFW=3 -s WASM=1  -std=c++1z -s ALLOW_MEMORY_GROWTH=1 --preload-file assets@/ -s DEMANGLE_SUPPORT=1 
+LD_FLAGS = $(BGFX_LIB) -s USE_WEBGL2=1 -s USE_GLFW=3 -s WASM=1  -std=c++1z -s ALLOW_MEMORY_GROWTH=1 --preload-file assets@/ -s DEMANGLE_SUPPORT=1 --shell-file src/shell.html
 
 
 # CC specifies which compiler we're using
